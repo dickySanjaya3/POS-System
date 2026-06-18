@@ -22,7 +22,6 @@ NEXPOS adalah sistem *Point of Sale* (POS) ritel modern berbasis web yang diranc
 app/
 ├── admin/          # Workspace data barang & filter stok kritis
 ├── cashier/        # Halaman utama kasir dengan fitur scanner lock
-├── login/          # Pintu masuk login terpusat untuk staf toko
-├── supervisor/     # Dasbor analitik omset & manajemen sandi staf
+├── supervisor/     # Dasbor analitik omset & manajemen staff
 ├── layout.tsx
 └── page.tsx        # Hub Navigasi Utama (Halaman Awal 3 Card)

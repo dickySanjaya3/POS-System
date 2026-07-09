@@ -41,6 +41,17 @@ export default function CashierPage() {
     }
   }, [isModalOpen]);
 
+  useEffect(() => {
+  // Fungsi untuk mengembalikan fokus ke input barcode jika kasir mengeklik area luar
+  const handleGlobalClick = () => {
+    if (document.activeElement?.tagName !== 'INPUT') {
+      inputRef.current?.focus();
+    }
+  };
+
+  document.addEventListener('click', handleGlobalClick);
+  return () => document.removeEventListener('click', handleGlobalClick);
+}, []);
   const handleScanSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!barcodeInput.trim()) return;

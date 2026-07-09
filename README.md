@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NEXPOS - Sistem Kasir Ritel Modern
 
-## Getting Started
+NEXPOS adalah sistem *Point of Sale* (POS) ritel modern berbasis web yang dirancang untuk kecepatan operasional di gardu kasir serta keamanan data manajemen di area belakang toko (*back-office*). Proyek ini dibangun menggunakan Next.js (App Router) dan Supabase.
 
-First, run the development server:
+## 🚀 Fitur Utama Sistem Kasir
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+* **Terminal Kasir Cepat (`/cashier`):** Dilengkapi sistem pengunci fokus kursor otomatis (`globalClick`), memastikan scanner barcode selalu aktif mendeteksi barang tanpa terganggu klik mouse yang tidak sengaja.
+* **Akses Berlapis & Rute Aman:** Modul administrasi sensitif dilindungi sistem autentikasi terpusat yang otomatis mengalihkan pengguna ke halaman login jika mendeteksi akses tanpa wewenang.
+* **Manajemen Inventori & SKU Gudang (`/admin`):** Ruang kerja khusus untuk memantau data barang, pembaruan harga jual, serta sistem deteksi dini otomatis untuk produk dengan status stok kritis ($\le 5$ Pcs).
+* **Dasbor Eksekutif Supervisor (`/supervisor`):** Lembar pemantauan omset toko menggunakan grafik interaktif ringkas, metrik rata-rata belanja (*basket size*), serta modul internal untuk memperbarui kata sandi staf secara aman.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tech Stack Proyek
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* **Frontend & Routing:** Next.js (App Router)
+* **Desain Antarmuka:** Tailwind CSS & Lucide React Icons
+* **Grafik Analitik:** Recharts Component Library
+* **Backend & Autentikasi:** Supabase Client SDK
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📂 Struktur Navigasi Halaman
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```text
+app/
+├── admin/          # Workspace data barang & filter stok kritis
+├── cashier/        # Halaman utama kasir dengan fitur scanner lock
+├── supervisor/     # Dasbor analitik omset & manajemen staff
+├── layout.tsx
+└── page.tsx        # Hub Navigasi Utama (Halaman Awal 3 Card)
